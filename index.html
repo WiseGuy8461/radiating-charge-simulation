@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Radiating Charge</title>
+    
+    <style>
+        body{
+            margin:0;
+            padding:20px;
+            background:#23005b;
+            font-family:sans-serif;
+        }
+
+        .simulation-row{
+            display:flex;
+            gap:30px;
+            align-items:flex-start;
+        }
+
+        canvas{
+            width: 1200px;
+            border:5px solid red;
+            background:black;
+        }
+        
+        #title{
+            font-family: 'Cambria';
+            font-size: 30px;
+            color: red;
+        }
+
+        .control-box{
+            font-weight: bold;
+            background: #fdcaca;
+            width:500px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: 5px solid black;
+            padding: 10px;
+            padding-top: 0px;
+
+        }
+
+        button{
+            background: black;
+            color: red;
+        }
+        
+        .trajectory-options{
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="simulation-row">
+        <canvas id="electric-field" width="800" height="500"></canvas>
+        <div class="control-box">
+            <div>
+                <h3 id="title">Radiating Charge Simulation</h3>
+            </div>
+            <div class="buttons">
+                <button id="playButton">Pause</button>
+            </div>
+            <div class="visualization-options">
+                <div>
+                    <label id="fieldLabel">
+                        <input type="checkbox" id="showField">
+                        Show Vector Field
+                    </label>
+                </div>
+                <div>
+                    <label id="wavesLabel">
+                        <input type="checkbox" id="showWaves">
+                        Show Waves
+                    </label>
+                </div>
+                <div>
+                    <label id="linesLable">
+                        <input type="checkbox" id="showLines">
+                        Show Field Lines
+                    </label>
+                </div>
+            </div>            
+            <div class="trajectory-options">
+                <label for="field-mode">Charge Trajectory:</label>
+                <select id="trajectory">
+                    <option value="sinusoidal">Sinusoidal</option>
+                    <option value="rest">At Rest</option>
+                    <option value="constant-acceleration">Constant Acceleration</option>
+                    <option value="circular">Circular</option>
+                    <option value="linear">Linear</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+</body>
+</html>
